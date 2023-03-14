@@ -1,0 +1,278 @@
+body {
+  margin: 0%;
+}
+
+/*Burger icon*/
+label.hamburger {
+  display: block;
+  background: white;
+  left: 15px;
+  width: 20px; /* less width = square hamburger */
+  height: 60px;
+  position: relative;
+  cursor: pointer;
+  z-index: 5;
+}
+
+input#hamburger {
+  display: none;
+}
+
+.line {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 25%;
+  background: #000;
+  transition: 0.5s;
+}
+
+/*----------------Burger Icon translation-----------------*/
+/* steps of 12 are optional, could also be 10, 13 etc */
+.line:nth-child(1) {
+  top: 16px;
+}
+
+.line:nth-child(2) {
+  top: 24px;
+}
+
+.line:nth-child(3) {
+  top: 32px;
+}
+
+/* translateY must be same as */
+#hamburger:checked + .hamburger .line:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+  background-color: rgba(244, 185, 23, 0.745);
+}
+
+#hamburger:checked + .hamburger .line:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger:checked + .hamburger .line:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
+  background-color: rgba(244, 185, 23, 0.745);
+}
+
+/*----------------------------------------------------------*/
+.title {
+  position: fixed;
+  top: 12px;
+  left: 55px;
+  color: black;
+  font-size: 24px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  text-decoration: none;
+  z-index: 4;
+}
+
+.HeadingIcons {
+  position: fixed;
+  top: 15px;
+  right: 22px;
+  z-index: 4;
+  background-color: white;
+}
+
+.SubHeader {
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: thin;
+  border-color: rgb(181, 169, 169);
+  width: 100%;
+  height: 60px;
+  text-align: left;
+  display: inline-block;
+  vertical-align: auto;
+  overflow-x: scroll;
+  z-index: 5;
+  position: fixed;
+  background-color: white;
+}
+.SubHeader .SubHeader1 {
+  width: 630px;
+}
+.SubHeader a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 100;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
+  position: relative;
+  top: 10px;
+}
+
+.Heading {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  z-index: 1;
+}
+
+.BurgerSublist {
+  display: flex;
+  flex-direction: column;
+  border-style: none;
+  position: absolute;
+  top: -570px;
+  transition: 0.5s;
+  background-color: rgb(244, 242, 242);
+  width: 100%;
+  height: 452px;
+  overflow-y: scroll;
+}
+
+.BurgerSublist1 {
+  display: flex;
+  flex-direction: column;
+  border-style: none;
+  z-index: 1;
+}
+
+#hamburger:checked ~ .BurgerSublist {
+  transform: translateY(692px);
+  position: fixed;
+}
+
+.HeadingIcons {
+  display: flex;
+}
+.HeadingIcons a {
+  text-decoration: none;
+}
+
+.TopHeading {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  top: 0px;
+  background-color: white;
+  z-index: 3;
+}
+
+/*Header Icons hover effect*/
+.SearchIcon:hover .SearchIconHover {
+  stroke: rgba(244, 185, 23, 0.745);
+}
+
+.PlayIcon:hover .PlayIconHover {
+  fill: rgba(244, 185, 23, 0.745);
+}
+
+.PersonIcon:hover .PersonIconHover {
+  fill: rgba(244, 185, 23, 0.745);
+}
+
+.SubHeader a:hover {
+  color: rgba(244, 185, 23, 0.745);
+}
+
+.hamburger:hover .line {
+  background-color: rgba(244, 185, 23, 0.745);
+}
+
+/* Header buttons spacing */
+.SearchButton {
+  margin-right: 20px;
+}
+
+.PlayButton {
+  margin-right: 20px;
+}
+
+.PersonButton {
+  margin-right: 20px;
+}
+
+/*BurgerSublist styling*/
+.BurgerSublist1 a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 300px;
+  color: #000;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 10px;
+}
+
+.BurgerBorder {
+  border-bottom: solid;
+  border-width: thin;
+}
+
+.BurgerSublist1 a:hover {
+  background-color: white;
+}
+
+input#Sites {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.MoreSites {
+  display: none;
+  height: 100px;
+}
+
+#Sites:checked ~ .MoreSites {
+  display: initial;
+  display: flex;
+  flex-direction: column;
+}
+
+.Sites {
+  padding: 10px;
+  padding-bottom: 200px;
+  font-size: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.BurgerSublist1 label {
+  cursor: pointer;
+  padding-top: 12px;
+  padding-bottom: 5px;
+}
+
+.BurgerSublist1 label:hover {
+  background-color: white;
+}
+
+input {
+  margin: 0;
+}
+
+@media (min-width: 630px) {
+  .SubHeader {
+    display: flex;
+    justify-content: center;
+    top: 80px;
+    overflow-x: unset;
+    height: 40px;
+  }
+  .title {
+    position: unset;
+    font-size: 70px;
+  }
+  .titleContainer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  label.hamburger {
+    position: relative;
+    top: 17px;
+  }
+  .HeadingIcons {
+    top: 30px;
+  }
+  .BurgerSublist {
+    width: 25%;
+  }
+}/*# sourceMappingURL=styles.css.map */
